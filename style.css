@@ -23,27 +23,19 @@ button {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
 }
 
 .container {
   max-width: 37.5rem;
   position: relative;
   background-color: hsl(257, 40%, 49%);
-  z-index: -2;
   padding: 1.6rem 3.6rem 3.6rem 3.6rem;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-image: url(images/bg-mobile.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .header {
@@ -92,11 +84,13 @@ body {
   border-radius: 3rem;
   border: none;
   color: hsl(257, 40%, 49%);
-  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.185);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.23);
 }
 
 .registerBtn:hover {
-  color: red;
+  color: white;
+  background-color: hsl(300, 69%, 71%);
+  cursor: pointer;
 }
 
 .socialLinks {
@@ -115,9 +109,82 @@ body {
 
 .icon-wrapper:hover {
   border: 1px solid hsl(300, 69%, 71%);
+  cursor: pointer;
 }
 
 .icon-wrapper svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.icon-wrapper:hover svg {
+  fill: hsl(300, 69%, 71%);
+  stroke: hsl(300, 69%, 71%);
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 132.5rem;
+    padding: 4rem 6rem;
+    background-image: url(images/bg-desktop.svg);
+    background-size: 90% auto;
+    display: flex;
+    gap: 4.2rem;
+  }
+
+  .header {
+    flex: 1.25;
+    gap: 7rem;
+    margin-block-end: 4rem;
+  }
+
+  .section-introduction {
+    flex: 1;
+    justify-content: space-between;
+    padding-block-start: 18rem;
+  }
+
+  .logo {
+    width: 20rem;
+  }
+
+  .introduction {
+    align-items: flex-start;
+  }
+
+  .introduction-lg,
+  .introduction-sm {
+    text-align: left;
+  }
+
+  .introduction-lg {
+    font-size: 4rem;
+  }
+
+  .introduction-sm {
+    font-size: 1.8rem;
+  }
+
+  .registerBtn {
+    padding: 1.6rem 5.4rem;
+    font-size: 1.6rem;
+    border-radius: 3rem;
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .icon-wrapper {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .icon-wrapper svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
